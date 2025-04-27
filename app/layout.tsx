@@ -11,6 +11,7 @@ import Footer from '@/components/Footer'
 import siteMetadata from '@/data/siteMetadata'
 import { ThemeProviders } from './theme-providers'
 import { Metadata } from 'next'
+import Script from 'next/script'
 
 const space_grotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -94,7 +95,46 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
       <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
       <link rel="alternate" type="application/rss+xml" href={`${basePath}/feed.xml`} />
+      {/* Google Search Console 스크립트 */}
+      <meta name="google-site-verification" content="gu9A0xbvWs-m-_9KUnVkq_IhOqNHg45xtTO-DZdRHO8" />
       <body className="bg-white pl-[calc(100vw-100%)] text-black antialiased dark:bg-gray-950 dark:text-white">
+        {/* GTM noscript (JS 꺼진 경우 대비) */}
+        <noscript>
+          <iframe
+              src="https://www.googletagmanager.com/ns.html?id=GTM-NV99ND9T"
+              height="0"
+              width="0"
+              style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
+
+        {/* Google Tag Manager script */}
+        <Script id="gtm-script" strategy="afterInteractive">
+          {`
+              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-NV99ND9T');
+            `}
+        </Script>
+
+        {/* Google Analytics script */}
+        <Script
+            src="https://www.googletagmanager.com/gtag/js?id=G-28JF2PK48P"
+            strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-28JF2PK48P', {
+                send_page_view: true,
+                allow_google_signals: true
+              });
+            `}
+        </Script>
         <ThemeProviders>
           <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
           <SectionContainer>
