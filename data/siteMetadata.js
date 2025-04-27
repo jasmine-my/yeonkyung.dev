@@ -1,7 +1,7 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
   title: 'Nae Yeon Kyung Blog',
-  author: 'Yeonkyung Nae',
+  author: 'Yeon Kyung Nae',
   headerTitle: 'Yeonkyung Blog',
   description: 'Frontend Developer Blog sharing development experience and insights.',
   language: 'ko-kr',
