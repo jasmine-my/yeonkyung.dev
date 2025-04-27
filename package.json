@@ -2,7 +2,7 @@
   "name": "yeonkyung.nae-blog",
   "version": "1.0.0",
   "engines": {
-    "node": "20.11.1"
+    "node": "20"
   },
   "private": true,
   "scripts": {
