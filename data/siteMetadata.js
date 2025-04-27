@@ -9,7 +9,7 @@ const siteMetadata = {
   siteUrl: 'https://yeonkyung.dev',
   siteRepo: 'https://github.com/jasmine-my/yeonkyung.dev.git/',
   siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.png`,
-  socialBanner: `${process.env.BASE_PATH || ''}/static/images/twitter-card.png`,
+  socialBanner: `${process.env.BASE_PATH || ''}/static/images/social-banner.png`,
   email: 'yeunk0206@naver.com',
   github: 'https://github.com/jasmine-my',
   linkedin: 'https://www.linkedin.com/in/yeonkyungnae',
