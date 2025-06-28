@@ -101,13 +101,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* GTM noscript (JS 꺼진 경우 대비) */}
         <noscript>
           <iframe
-              src="https://www.googletagmanager.com/ns.html?id=GTM-NV99ND9T"
-              height="0"
-              width="0"
-              style={{ display: 'none', visibility: 'hidden' }}
+            title="google tag manager"
+            src="https://www.googletagmanager.com/ns.html?id=GTM-NV99ND9T"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
           />
         </noscript>
-
         {/* Google Tag Manager script */}
         <Script id="gtm-script" strategy="afterInteractive">
           {`
@@ -121,8 +121,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         {/* Google Analytics script */}
         <Script
-            src="https://www.googletagmanager.com/gtag/js?id=G-28JF2PK48P"
-            strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-28JF2PK48P"
+          strategy="afterInteractive"
         />
         <Script id="gtag-init" strategy="afterInteractive">
           {`
